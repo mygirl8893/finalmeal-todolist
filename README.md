@@ -1,4 +1,4 @@
-# Symfony 3 TODO List
+# FINAL MEAL TODOLIST
 
 Just another TODO app to show some basic and new features on Symfony 3.
 
@@ -34,7 +34,7 @@ Run tests with PHPUnit:
 
     phpunit
 
-## TODO
+## FINAL MEAL TODO
 
 - On the TODO list and details, check if the todo variable is empty
 - Add the submit button on the view, not on the model or controller
