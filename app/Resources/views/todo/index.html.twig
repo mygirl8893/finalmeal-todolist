@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('todo_list') }}" title="Home page">Final Meal</a></li>
+        <li class="active">List</li>
+    </ol>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Create Date</th>
+            <th>Flight</th>
+            <th style="width: 10px;">&nbsp;</th>
+            <th>&nbsp;</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+
+        <h2 class="page-header">Final-Meal List</h2>
+
+        {% if todos is defined %}
+            {% for todo in todos %}
+            <tr>
+                <th scope="row">{{ todo.id }}</th>
+                <td>{{ todo.name }}</td>
+                <td>{{ todo.createDate|date('F j, Y') }}</td>
+                <td>{{ todo.flight }}</td>
+                <td><a href="{{ path('todo_details', {'id': todo.id}) }}" class="btn btn-success" title="View Final-Meal">View</a></td>
+                <!--<td><a href="{{ path('todo_edit', {'id': todo.id}) }}" class="btn btn-primary" title="Edit Figure">Edit</a></td>-->
+                <!--<td><a href="{{ path('todo_delete', {'id': todo.id}) }}" class="btn btn-danger" title="Delete">Delete</a></td>-->
+                <td><span class="btn btn-info">{{ todo.category }}</span></td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            No
+        {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
