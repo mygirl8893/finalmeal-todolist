@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <ol class="breadcrumb">
+        <li><a href="{{ path('todo_list') }}" title="Home page">Home</a></li>
+        <li><a href="{{ path('todo_list') }}" title="">Final-Meal</a></li>
+        <li class="active">Audit Date</li>
+    </ol>
+
+    <h2 class="page-header">Montly Audit</h2>
+
+    <div>
+        
+        <li class="list-group-item"><strong>Extra Order &nbsp;:</strong> {{ todo.extraOrder }}</li>
+        <li class="list-group-item"><strong>Create Date &nbsp;:</strong> {{ todo.createDate|date('F j, Y') }}</li><!--, g:i a-->
+        <li class="list-group-item"><strong>Cutlery &emsp;&emsp; :</strong> {{ todo.cutlery }}</li>
+        <li class="list-group-item" style="color :red;"><strong>Reminder &emsp; :</strong> {{ todo.reminder }}</li>
+    </div>
+
+{% endblock %}
+

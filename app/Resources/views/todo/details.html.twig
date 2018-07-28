@@ -11,11 +11,11 @@
     <h2 class="page-header">{{ todo.name }}<div style="float :right; color: green;">{{ todo.category }}<div></h2>
 
     <div>
-        <li class="list-group-item"><strong>Flight:</strong> {{ todo.flight }}</li>
-        <li class="list-group-item"><strong>Extra Order:</strong> {{ todo.extraOrder }}</li>
-        <li class="list-group-item"><strong>Create Date:</strong> {{ todo.createDate|date('F j, Y') }}</li><!--, g:i a-->
-        <li class="list-group-item"><strong>Cutlery:</strong> {{ todo.cutlery }}</li>
-        <li class="list-group-item" style="color :red;"><strong>Reminder:</strong> {{ todo.reminder }}</li>
+        <li class="list-group-item"><strong>Flight &emsp;&emsp;&emsp;: </strong> {{ todo.flight }}</li>
+        <li class="list-group-item"><strong>Extra Order &nbsp;:</strong> {{ todo.extraOrder }}</li>
+        <li class="list-group-item"><strong>Create Date &nbsp;:</strong> {{ todo.createDate|date('F j, Y') }}</li><!--, g:i a-->
+        <li class="list-group-item"><strong>Cutlery &emsp;&emsp; :</strong> {{ todo.cutlery }}</li>
+        <li class="list-group-item" style="color :red;"><strong>Reminder &emsp; :</strong> {{ todo.reminder }}</li>
         
         <!--<li class="list-group-item" style="color :green;"><strong> </strong> {{ todo.category }}</li>-->
     </div>
@@ -42,10 +42,13 @@
     <div class="list-group">
         <div class="list-group-item list-group-item-action flex-column align-items-start active" style="background-color : #1c2a48; border-color : #1c2a48;">
             <div>
-                <h4>{{ todo.finalmeal }}</h4>
-                <small><a href="{{ path('todo_edit', {'id': todo.id}) }}" class="btn btn-primary" title="Edit Figure" style="background-color : #1c2a48; border-color : #3F729B;">Edit</a></small>
+                <!-- white-space: pre-wrap will call up all spacing & line breaking-->
+                <h4 style="white-space: pre-wrap;">{{ todo.finalmeal }}</h4>
+                <small><a href="{{ path('todo_edit', {'id': todo.id}) }}" class="btn" title="Edit Figure" style="color: #fff; font-size: 20px;"><i class="far fa-edit fa-spin"></i></a></small>
+                <small style="float: right;"><a href="#" class="btn btn-primary" title="Email to Catering"><i class="far fa-envelope-open">&nbsp; Send Email </i></a></small>
             </div>
         </div>
     </div>
+   
 
 {% endblock %}

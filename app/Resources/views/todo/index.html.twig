@@ -4,7 +4,15 @@
     <ol class="breadcrumb">
         <li><a href="{{ path('todo_list') }}" title="Home page">Final Meal</a></li>
         <li class="active">List</li>
+        <li><a href="JavaScript:newPopup('https://cbsweb.evaair.com/GCS/Login.aspx');">GCS/Login</a></li>
     </ol>
+
+    <script type="text/javascript">
+    // Popup window code
+    function newPopup(url) {
+    popupWindow = window.open(url,'popUpWindow1','height=800, width=800, left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    }
+    </script>
 
     <table class="table table-striped">
         <thead>
@@ -29,10 +37,10 @@
                 <td>{{ todo.name }}</td>
                 <td>{{ todo.createDate|date('F j, Y') }}</td>
                 <td>{{ todo.flight }}</td>
-                <td><a href="{{ path('todo_details', {'id': todo.id}) }}" class="btn btn-success" title="View Final-Meal">View</a></td>
-                <!--<td><a href="{{ path('todo_edit', {'id': todo.id}) }}" class="btn btn-primary" title="Edit Figure">Edit</a></td>-->
+                <td><a href="{{ path('todo_details', {'id': todo.id}) }}" class="btn btn-success" title="View Final-Meal">View &nbsp;<i class="fas fa-search"></i></a></td>
+                <!--<td><a href="{{ path('todo_edit', {'id': todo.id}) }}" class="btn btn-primary" title="Edit Figure">Edit <i class="far fa-edit"></i></a></td>-->
                 <!--<td><a href="{{ path('todo_delete', {'id': todo.id}) }}" class="btn btn-danger" title="Delete">Delete</a></td>-->
-                <td><span class="btn btn-info">{{ todo.category }}</span></td>
+                <td><span class="btn btn-info">{{ todo.category }}<i class=""></i></span></td>
             </tr>
             {% endfor %}
         {% else %}

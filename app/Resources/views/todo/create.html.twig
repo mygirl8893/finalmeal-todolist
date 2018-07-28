@@ -10,7 +10,36 @@
     <h2 class="page-header">Add Final-Meal</h2>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-    {{ form_end(form) }}
 
+        {{ form_widget(form) }}
+        {#
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+
+        {{ form_label(form.finalmeal) }}
+        {{ form_widget(form.finalmeal, { 'attr': {} }) }}
+
+        {{ form_label(form.extra_order) }}
+        {{ form_widget(form.extra_order, { 'attr': {} }) }}
+
+        {{ form_label(form.cutlery) }}
+        {{ form_widget(form.cutlery, { 'attr': {} }) }}
+
+        {{ form_label(form.flight) }}
+        {{ form_widget(form.flight, { 'attr': {} }) }}
+
+        {{ form_label(form.reminder) }}
+        {{ form_widget(form.reminder, { 'attr': {} }) }}
+
+        {{ form_label(form.wastage, 'Wastage', { 'label_attr': {'style': 'padding-top: 5px;'} }) }}
+        {{ form_widget(form.wastage, { 'attr': {} }) }}
+
+        {{ form_label(form.category, 'Category', { 'label_attr': {'style': 'float: right; margin-top: -60px; margin-right: 769px;'} }) }}
+        {{ form_widget(form.category, { 'attr': {} }) }}
+
+        {{ form_label(form.create_date, 'Create Date', { 'label_attr': {'style': 'float: right; margin-top: -60px; margin-right: 439px;'} }) }}
+        {{ form_widget(form.create_date, { 'attr': {} }) }}
+        #}
+
+    {{ form_end(form) }}
 {% endblock %}
