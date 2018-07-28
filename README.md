@@ -1,4 +1,4 @@
-# Symfony 3 TODO List
+# Final Meal TODO List
 
 Just another TODO app to show some basic and new features on Symfony 3.
 
@@ -28,18 +28,3 @@ I have used the following comamnds, let me write a little note for me to remembe
 
     doctrine:generate:entity AppBundle:Todo
 
-## Unit tests
-
-Run tests with PHPUnit:
-
-    phpunit
-
-## TODO
-
-- On the TODO list and details, check if the todo variable is empty
-- Add the submit button on the view, not on the model or controller
-- render a form with a generic form cycle on elements
-- Datetime field css
-- Breadcrumbs, add a bundle or set it manually
-- Controller functional test
-- Add a category and priority table and use some relationships
