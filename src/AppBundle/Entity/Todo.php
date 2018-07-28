@@ -71,6 +71,20 @@ class Todo
     private $reminder;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="wastage", type="string", length=255)
+     */
+    private $wastage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="audit", type="string", length=255)
+     */
+    private $audit;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="create_date", type="datetime")
@@ -257,6 +271,54 @@ class Todo
     }
 
     /**
+     * Set wastage.
+     *
+     * @param string $wastage
+     *
+     * @return Todo
+     */
+    public function setWastage($wastage)
+    {
+        $this->wastage = $wastage;
+
+        return $this;
+    }
+
+    /**
+     * Get wastage.
+     *
+     * @return string
+     */
+    public function getWastage()
+    {
+        return $this->wastage;
+    }
+
+    /**
+     * Set audit.
+     *
+     * @param string $audit
+     *
+     * @return Todo
+     */
+    public function setAudit($audit)
+    {
+        $this->audit = $audit;
+
+        return $this;
+    }
+
+    /**
+     * Get audit.
+     *
+     * @return string
+     */
+    public function getAudit()
+    {
+        return $this->audit;
+    }
+
+    /**
      * Set createDate.
      *
      * @param \DateTime $createDate
@@ -279,4 +341,5 @@ class Todo
     {
         return $this->createDate;
     }
+
 }

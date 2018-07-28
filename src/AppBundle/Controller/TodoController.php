@@ -53,7 +53,9 @@ class TodoController extends Controller
             $todo->setFlight($form['flight']->getData());
             $todo->setCutlery($form['cutlery']->getData());
             $todo->setReminder($form['reminder']->getData());
+            $todo->setWastage($form['wastage']->getData());
             $todo->setCategory($form['category']->getData());
+           // $todo->setCategoryone($form['categoryone']->getData());
             $todo->setCreateDate($now);
 
             $em = $this->getDoctrine()->getManager();
@@ -94,7 +96,9 @@ class TodoController extends Controller
         $todo->setExtraOrder($todo->getExtraOrder());
         $todo->setFlight($todo->getFlight());
         $todo->setCategory($todo->getCategory());
+        //$todo->setCategoryone($todo->getCategoryone());
         $todo->setReminder($todo->getReminder());
+        $todo->setWastage($todo->getWastage());
         $todo->setCutlery($todo->getCutlery());
         $todo->setCreateDate($todo->getCreateDate());
         //$todo->setCreateDate($now);
@@ -113,7 +117,9 @@ class TodoController extends Controller
             $todo->setFlight($form['flight']->getData());
             $todo->setCutlery($form['cutlery']->getData());
             $todo->setReminder($form['reminder']->getData());
+            $todo->setWastage($form['wastage']->getData());
             $todo->setCategory($form['category']->getData());
+           // $todo->setCategoryone($form['categoryone']->getData());
             $todo->setCreateDate($form['create_date']->getData());
             //$todo->setCreateDate($now);
             $em->flush();
@@ -167,5 +173,21 @@ class TodoController extends Controller
         );
 
         return $this->redirectToRoute('todo_list');
+    }
+
+    /**
+     * @Route("/todo/audit", name="todo_audit")
+     *
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function auditAction(Request $request)
+    {
+        $todos = $this->getDoctrine()->getRepository('AppBundle:Todo')->findBy(array(), array('audit' => 'DESC'),1 ,0);
+
+        return $this->render('todo/audit.html.twig', array(
+            'todos' => $todos
+        ));
     }
 }
